@@ -1,0 +1,108 @@
+*, *::before, *::after {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body  {
+	line-height: 1.5;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: medium;
+	font-weight: 400;
+
+	background-color: var(--background-color);
+	color: var(--font-color);
+}
+
+:root {
+	--background-color-rgb: 255, 255, 255;
+	--font-color-rgb: 30, 30, 30;
+	--link-color-rgb: 60, 90, 180;
+	--border-color-rgb: 200, 200, 200;
+	--background-item-color-rgb: 240, 240, 240;
+	--scrollbar-background-color-rgb: 240, 240, 240;
+	--scrollbar-color-rgb: 180, 180, 180;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background-color-rgb: 0, 0, 0;
+		--font-color-rgb: 230, 220, 220;
+		--link-color-rgb: 150, 120, 200;
+		--border-color-rgb: 122, 122, 122;
+		--background-item-color-rgb: 50, 50, 50;
+		--scrollbar-background-color-rgb: 30, 30, 30;
+		--scrollbar-color-rgb: 100, 100, 100;
+	}
+}
+
+:root {
+	--background-color: rgb(var(--background-color-rgb));
+	--font-color: rgb(var(--font-color-rgb));
+	--link-color: rgb(var(--link-color-rgb));
+	--border-color: rgb(var(--border-color-rgb));
+	--background-item-color: rgb(var(--background-item-color-rgb));
+	--scrollbar-background-color: rgb(var(--scrollbar-background-color-rgb));
+	--scrollbar-color: rgb(var(--scrollbar-color-rgb));
+}
+
+a {
+	color: var(--link-color);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.search-form {
+	width: calc(100% - .5rem);
+	padding: .25rem;
+	margin-inline: .25rem;
+	border: 1px solid var(--border-color);
+	text-align: center;
+}
+
+.search-input {
+	display: inline-block;
+	color: var(--font-color);
+	background-color: var(--background-item-color);
+	border: 1px solid var(--border-color);
+	font-size: 1.25rem;
+	padding: .15rem;
+}
+
+.search-button {
+	display: inline-block;
+	margin-left: 10px;
+	color: var(--font-color);
+	background-color: var(--background-item-color);
+	border-color: var(--border-color);
+	font-size: 1.15rem;
+	padding: .12rem;
+}
+
+table {
+	border-color: var(--border-color);
+}
+
+.fileTypeRadio {
+	padding: .2rem;
+	text-align: center;
+}
+
+&::-webkit-scrollbar {
+	background-color: var(--scrollbar-background-color);
+}
+
+&::-webkit-scrollbar-thumb {
+	background-color: var(--scrollbar-color);
+	border-radius: 50px;
+}
+
+.sort-arrow {
+	padding: .25rem;
+	margin-inline: .1rem;
+	text-decoration: underline;
+	font-size: 1.1rem;
+}
