@@ -1,6 +1,7 @@
 import { Stats } from "fs"
+import getTranslate, { LangType } from "../translate/translation"
 
-export default function StatsTable({ stats }: { stats: Stats }) {
+export default function StatsTable({ stats, lang }: { stats: Stats, lang: LangType }) {
 	const otherParameters = {
 		isDirectory: String(stats.isDirectory()),
 		isFile: String(stats.isFile()),
@@ -11,15 +12,11 @@ export default function StatsTable({ stats }: { stats: Stats }) {
 		isSymbolicLink: String(stats.isSymbolicLink()),
 	}
 
-	const parameters = {
-
-	}
-
 	return <table border={0} cellPadding={2} cellSpacing={10} style={{ width: '100%' }}>
 		<thead>
 			<tr>
-				<th>Property</th>
-				<th>Value</th>
+				<th>{getTranslate(lang, 'property')}</th>
+				<th>{getTranslate(lang, 'value')}</th>
 			</tr>
 		</thead>
 		<tbody>

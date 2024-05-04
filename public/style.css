@@ -70,16 +70,19 @@ a:hover {
 	border: 1px solid var(--border-color);
 	font-size: 1.25rem;
 	padding: .15rem;
+	margin-bottom: .2rem;
 }
 
 .search-button {
+	cursor: pointer;
 	display: inline-block;
 	margin-left: 10px;
 	color: var(--font-color);
 	background-color: var(--background-item-color);
-	border-color: var(--border-color);
+	border: 1px solid var(--border-color);
 	font-size: 1.15rem;
 	padding: .12rem;
+	outline: none;
 }
 
 table {
@@ -89,6 +92,7 @@ table {
 .fileTypeRadio {
 	padding: .2rem;
 	text-align: center;
+	margin-right: .1rem;
 }
 
 &::-webkit-scrollbar {
@@ -105,4 +109,9 @@ table {
 	margin-inline: .1rem;
 	text-decoration: underline;
 	font-size: 1.1rem;
+}
+
+.back-link {
+	display: block;
+	padding: .5rem;
 }
