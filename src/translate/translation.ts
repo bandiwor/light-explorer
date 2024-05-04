@@ -2,7 +2,10 @@ export type LangType = 'ru' | 'en';
 type Phrase = 'directory' | 'filename' | 'filenames' | 'type' | 'statistic' | 'files'
 	| 'file' | 'any' | 'apply' | 'filter' | 'view' | 'download' | 'settings'
 	| 'theme' | 'back' | 'folder' | 'folders' | 'property' | 'value'
-	| 'details';
+	| 'details' | 'is' | 'block-device' | 'socket' | 'symbol-link' | 'character-device'
+	| 'FIFO' | 'birth' | 'create' | 'modify' | 'access' | 'milliseconds-short'
+	| 'blocks' | 'size' | 'ino' | 'block' | 'filetype-mode' | 'dev' | 'nlink' | 'uid'
+	| 'gid' | 'rdev' | 'time' | 'formatted';
 
 export const DefaultLang = 'en' satisfies LangType;
 
@@ -27,7 +30,30 @@ const translate = {
 		folders: 'Папки',
 		property: 'Свойство',
 		value: 'Значение',
-		details: 'Подробности'
+		details: 'Подробности',
+		"block-device": "Блочное устройство",
+		"character-device": "Символьное устройство",
+		"filetype-mode": "Тип файла и режим",
+		"milliseconds-short": "мс",
+		"symbol-link": "Символическая ссылка",
+		access: "Доступ",
+		birth: "Рождение",
+		block: "Блок",
+		blocks: "Блоки",
+		create: "Создание",
+		dev: "dev",
+		FIFO: "FIFO",
+		gid: "gid",
+		ino: "ino",
+		is: "Это",
+		modify: "Изменение",
+		nlink: "nlink",
+		rdev: "rdev",
+		size: "Размер",
+		socket: "Сокет",
+		uid: "UID",
+		time: "Время",
+		formatted: "Форматированный",
 	},
 	en: {
 		any: 'Any',
@@ -49,7 +75,30 @@ const translate = {
 		folders: 'Folders',
 		property: 'Property',
 		value: 'Value',
-		details: 'Details'
+		details: 'Details',
+		"block-device": "Block device",
+		"character-device": "Character device",
+		"filetype-mode": "Filetype&mode",
+		"milliseconds-short": "ms",
+		"symbol-link": "Symbol link",
+		access: "Access",
+		birth: "Birth",
+		block: "Block",
+		blocks: "Blocks",
+		create: "Create",
+		dev: "Dev",
+		FIFO: "FIFO",
+		gid: "Gid",
+		ino: "Ino",
+		is: "Is",
+		modify: "Modify",
+		nlink: "Nlink",
+		rdev: "Rdev",
+		size: "Size",
+		socket: "Socket",
+		uid: "Uid",
+		time: "Time",
+		formatted: "Formatted",
 	}
 } satisfies Record<LangType, Record<Phrase, string>>;
 
@@ -57,5 +106,6 @@ const translate = {
 function getTranslate(lang: keyof typeof translate, phrase: keyof typeof translate[keyof typeof translate]) {
 	return translate[lang][phrase];
 }
+
 
 export default getTranslate;

@@ -1,4 +1,5 @@
 import { Stats } from "fs";
+import { lookup } from "mime-types";
 import { dirname } from "path";
 import getTranslate, { LangType } from "../translate/translation";
 import StatsTable from "./StatsTable";
@@ -13,7 +14,7 @@ export default function FileDetails({ path, stats, lang }: { lang: LangType, pat
 		</center>
 		<details open>
 			<summary>{getTranslate(lang, 'statistic')}</summary>
-			<StatsTable lang={lang} stats={stats} />
+			<StatsTable mime={lookup(path) || getTranslate(lang, 'file')} lang={lang} stats={stats} />
 		</details>
 	</>
 }
